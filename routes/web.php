@@ -20,8 +20,13 @@ Route::post('actores/buscar','ActorsController@search');
 Route::get('/peliculas','MoviesController@directory');
 Route::get('/addMovie','GenresController@movies');
 Route::post('/addMovie','MoviesController@store');
-Route::get('/addActor','ActorsController@ver');
-Route::post('/addActor','ActorsController@store');
-Route::get('/actor/{id}/edit', "ActorsController@edit");
-Route::post('/borrarActor','ActorsController@borrar');
-Route::put('/editarActor', 'ActorsController@update');
+Route::get('/addActor','ActorsController@ver')->middleware('auth');
+Route::post('/addActor','ActorsController@store')->middleware('auth');
+Route::get('/actor/{id}/edit', "ActorsController@edit")->middleware('auth');
+Route::post('/borrarActor','ActorsController@borrar')->middleware('auth');
+Route::put('/editarActor', 'ActorsController@update')->middleware('auth');
+Route::get('/user/{id}','UsersController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
