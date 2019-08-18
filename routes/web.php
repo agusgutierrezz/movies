@@ -25,7 +25,10 @@ Route::post('/addActor','ActorsController@store')->middleware('auth');
 Route::get('/actor/{id}/edit', "ActorsController@edit")->middleware('auth');
 Route::post('/borrarActor','ActorsController@borrar')->middleware('auth');
 Route::put('/editarActor', 'ActorsController@update')->middleware('auth');
-Route::get('/user/{id}','UsersController@show');
+Route::get('/user/{id}','UsersController@show')->middleware('auth');
+Route::post('/user/{id}','UsersController@storeImg');
+Route::get('/users','UsersController@directory');
+
 
 Auth::routes();
 

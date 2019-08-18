@@ -1,11 +1,11 @@
-@extends('plantilla')
+@extends('layouts.app')
 @section('titulo')
   Mis peliculas
 @endsection
 @section('estilo')
   <link rel="stylesheet" href="/css/app.css">
 @endsection
-@section('section')
+@section('content')
   <h1>Peliculas</h1>
   <ul>
     @forelse ($peliculas as $peli)

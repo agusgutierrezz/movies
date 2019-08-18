@@ -1,15 +1,15 @@
-@extends('plantilla')
+@extends('layouts.app')
 @section('titulo')
   Actores
 @endsection
 @section('estilo')
   <link rel="stylesheet" href="/css/app.css">
 @endsection
-@section('section')
+@section('content')
   <div class="jumbotron">
     <h1>Perfil de {{ $actor->getNombreCompleto()}} </h1>
     <div class="">
-    <img src="/storage/{{$actor->foto}}" alt="">  
+    <img src="/storage/{{$actor->foto}}" alt="">
     </div>
 
     <h3>Rating {{ $actor['rating']}}</h3>

@@ -1,11 +1,11 @@
-@extends('plantilla')
+@extends('layouts.app')
 @section('titulo')
   Mis Actores
 @endsection
 @section('estilo')
   <link rel="stylesheet" href="/css/app.css">
 @endsection
-@section('section')
+@section('content')
 <div class="container">
   <h1 class="m-4">Actores</h1>
   <ul>
